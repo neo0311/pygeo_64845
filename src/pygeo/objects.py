@@ -78,7 +78,21 @@ class Ray:
 
 class Sphere:
     """A sphere."""
+    def __init__(self,center=Point,radius=float):
+        self._sphere = np.array((center, radius), dtype=object)
+        self._center = np.array(center)
+        self._radius = float(radius)
 
+    def __repr__(self):
+        return f"Sphere({self._sphere})"
+    
+    def __eq__(self,other):
+        if isinstance(other,Sphere):
+            if np.array_equal(self._sphere, other._sphere):
+                return True
+            else:
+                return False
+        return NotImplemented
     ...
 
 
@@ -86,4 +100,3 @@ class Triangle:
     """A triangle."""
 
     ...
-
