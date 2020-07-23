@@ -38,7 +38,7 @@ class Vector:
         self._vector = np.array(vector, dtype=float)
 
     def __repr__(self):
-        return f"Point({self._vector.tolist()})"
+        return f"Vector({self._vector.tolist()})"
 
     def __add__(self, other):
         if isinstance(other, Vector):
