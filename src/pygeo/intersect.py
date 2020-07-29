@@ -1,4 +1,4 @@
-from .objects import Ray, Sphere, Triangle
+from .objects import Ray, Sphere, Triangle, Point
 
 
 def intersect(first_object, second_object):

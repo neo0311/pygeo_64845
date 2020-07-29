@@ -3,8 +3,8 @@ from pygeo.intersect import (
     _intersect_ray_with_sphere,
     _intersect_ray_with_triangle,
 )
-from pygeo.objects import Ray, Sphere, Triangle
-
+from pygeo.objects import Ray, Sphere, Triangle, Point
+import numpy as np
 
 # intersect
 

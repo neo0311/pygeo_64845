@@ -60,8 +60,9 @@ class Ray:
     """A ray."""
     def __init__(self,origin=Point, direction=Vector):
         self._ray = np.array((origin, direction))
-        self._direction = np.array(direction)
-        self._origin = np.array(origin)
+        self._origin = np.array(origin._point)
+        self._direction = np.array(direction._vector)
+        self._direction = np.array((self._direction - self._origin)/(np.sqrt(np.sum((self._direction - self._origin)**2))))
     ...
     def __repr__(self):
         return f"Ray({self._ray})"
