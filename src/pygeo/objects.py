@@ -60,9 +60,9 @@ class Ray:
     """A ray."""
     def __init__(self,origin=Point, direction=Vector):
         self._ray = np.array((origin, direction))
-        self._origin = np.array(origin._point)
+        self._origin = origin
         self._direction = np.array(direction._vector)
-        self._direction = np.array((self._direction - self._origin)/(np.sqrt(np.sum((self._direction - self._origin)**2))))
+        self._direction = Vector((self._direction - origin._point)/(np.sqrt(np.sum((self._direction - origin._point)**2))))
     ...
     def __repr__(self):
         return f"Ray({self._ray})"
@@ -81,7 +81,7 @@ class Sphere:
     """A sphere."""
     def __init__(self,center=Point,radius=float):
         self._sphere = np.array((center, radius), dtype=object)
-        self._center = np.array(center)
+        self._center = center
         self._radius = float(radius)
 
     def __repr__(self):
