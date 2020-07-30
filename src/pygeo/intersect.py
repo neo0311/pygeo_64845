@@ -30,9 +30,7 @@ def _intersect_ray_with_sphere(ray, sphere):
             vector_2 = d2*(ray._direction/np.sqrt(np.sum(ray._direction**2))) + ray._origin
             point_1 = np.round(((ray._origin - 0*ray._origin) + (vector_1 - ray._origin)),decimals=2)
             point_2 = np.round(((ray._origin - 0*ray._origin) + (vector_2 - ray._origin)),decimals=2)
-            #print(np.isclose(((point_1 - ray._origin )/(np.sqrt(np.sum((point_1 - ray._origin)**2)))) , ray._direction))
             if np.isclose(((point_1 - ray._origin )/(np.sqrt(np.sum((point_1 - ray._origin)**2)))), ray._direction).all():
-            #if np.cross(((point_1 - ray._origin )/(np.sqrt(np.sum((point_1 - ray._origin)**2)))), ray._direction).all() != np.array([0,0,0]).all():
                 return Point(point_1),Point(point_2)
             else:
                 return "No Intersecction"
@@ -41,14 +39,3 @@ def _intersect_ray_with_sphere(ray, sphere):
 
 def _intersect_ray_with_triangle(ray, triangle):
     ...
-
-
-o = (0,0,0)
-c = (3, 3, 3)
-d = (1,1,1)
-r = 1
-a = Ray(Point(o),Vector(d))
-b = Sphere(Point(c),r)
-
-#print(a._direction)
-print(_intersect_ray_with_sphere(a,b))
